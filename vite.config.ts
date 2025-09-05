@@ -41,7 +41,7 @@ export default defineConfig(({ mode }) => ({
       shared: ['react', 'react-dom', 'zustand'],
     }) : federationPlugin({
       name: 'mainFront',
-      filename: 'assets/remoteEntry.js',
+      filename: 'remoteEntry.js',
       exposes: {
         './UserStore': './src/store/userStore.ts',
       },
