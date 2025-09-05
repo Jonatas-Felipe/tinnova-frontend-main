@@ -108,6 +108,14 @@
                   entry: "http://localhost:3001/assets/remoteEntry.js",
                   shareScope: "default",
                 }
+          ,
+                {
+                  entryGlobalName: "topFinance",
+                  name: "topFinance",
+                  type: "module",
+                  entry: "http://localhost:3002/assets/remoteEntry.js",
+                  shareScope: "default",
+                }
           
       ]
       export {

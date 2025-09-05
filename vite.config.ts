@@ -4,6 +4,8 @@ import { federation } from '@module-federation/vite';
 import ViteRestart from 'vite-plugin-restart';
 import path from 'path';
 
+const isTest = process.env.VITEST;
+
 export default defineConfig({
   plugins: [
     ViteRestart({
@@ -12,7 +14,7 @@ export default defineConfig({
         '../frontend-top-finance/**/*',
       ],
     }),
-    federation({
+    !isTest && federation({
       name: 'mainFront',
       remotes: {
         topUsers: {
@@ -51,5 +53,15 @@ export default defineConfig({
     alias: {
       '~': path.resolve(__dirname, 'src'),
     },
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './src/setupTests.ts',
+    exclude: [
+      'node_modules/**',
+      'dist/**',
+      '**/*.config.{js,ts}',
+    ],
   },
 });
