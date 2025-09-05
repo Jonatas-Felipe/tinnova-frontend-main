@@ -1,14 +1,12 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { loadRemote } from '@module-federation/runtime';
-
 
 import RouteWrapper from './RouteWrapper';
 
 import Login from '~/pages/Login';
 
-const UsersApp = lazy(() => loadRemote<any>('topUsers/App').then((module) => ({ default: module })),);
-const FinanceApp = lazy(() => loadRemote<any>('topFinance/App').then((module) => ({ default: module })),);
+const UsersApp = lazy(() => import('topUsers/App'));
+const FinanceApp = lazy(() => import('topFinance/App'));
 
 const routes: React.FC = () => {
   return (

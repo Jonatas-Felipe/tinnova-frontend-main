@@ -7,6 +7,7 @@ import path from 'path';
 const isTest = process.env.VITEST;
 
 export default defineConfig({
+  base: '/',
   plugins: [
     ViteRestart({
       restart: [
