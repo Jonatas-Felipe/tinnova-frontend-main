@@ -13,6 +13,11 @@
           return pkg
         }
       ,
+        "styled-components": async () => {
+          let pkg = await import("__mf__virtual/mainFront__prebuild__styled_mf_2_components__prebuild__.js")
+          return pkg
+        }
+      ,
         "zustand": async () => {
           let pkg = await import("__mf__virtual/mainFront__prebuild__zustand__prebuild__.js")
           return pkg
@@ -42,7 +47,7 @@
               }
             },
             shareConfig: {
-              singleton: false,
+              singleton: true,
               requiredVersion: "^19.1.0"
             }
           }
@@ -68,8 +73,34 @@
               }
             },
             shareConfig: {
-              singleton: false,
+              singleton: true,
               requiredVersion: "^19.1.0"
+            }
+          }
+        ,
+          "styled-components": {
+            name: "styled-components",
+            version: "5.3.0",
+            scope: ["default"],
+            loaded: false,
+            from: "mainFront",
+            async get () {
+              usedShared["styled-components"].loaded = true
+              const {"styled-components": pkgDynamicImport} = importMap 
+              const res = await pkgDynamicImport()
+              const exportModule = {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "5.3.0"
             }
           }
         ,
@@ -94,13 +125,29 @@
               }
             },
             shareConfig: {
-              singleton: false,
+              singleton: true,
               requiredVersion: "^5.0.8"
             }
           }
         
     }
       const usedRemotes = [
+                {
+                  entryGlobalName: "topUsers",
+                  name: "topUsers",
+                  type: "module",
+                  entry: "http://localhost:3001/assets/remoteEntry.js",
+                  shareScope: "default",
+                }
+          ,
+                {
+                  entryGlobalName: "topFinance",
+                  name: "topFinance",
+                  type: "module",
+                  entry: "http://localhost:3002/assets/remoteEntry.js",
+                  shareScope: "default",
+                }
+          
       ]
       export {
         usedShared,
