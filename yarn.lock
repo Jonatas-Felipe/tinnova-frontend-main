@@ -3041,13 +3041,6 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-masked-text@0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/react-masked-text/-/react-masked-text-0.4.1.tgz#be747a6680ea93d54b6552c9fbb472ab057b030d"
-  integrity sha512-M3V2IQcucxfZumFtsc3k7q1FWvsKd08fgtwgtByCueGV6k6UFm1XNgU+m6pLMHYtFuVPR0E6+j22o3zJhDGbdw==
-  dependencies:
-    tinymask "1.0.2"
-
 react-refresh@^0.17.0:
   version "0.17.0"
   resolved "https://registry.npmjs.org/react-refresh/-/react-refresh-0.17.0.tgz"
@@ -3498,11 +3491,6 @@ tinyglobby@^0.2.14:
   dependencies:
     fdir "^6.4.4"
     picomatch "^4.0.2"
-
-tinymask@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/tinymask/-/tinymask-1.0.2.tgz#df3775a94087b0d3d056c256e8923c01b7ec0941"
-  integrity sha512-2FjNINAMq0s3e94ns2PuElOQZOt9QVgnrv0JZ8yNblwecyQDhVsSre6Rs+WJj/IHEcgdfYbDMP7zvECTfV/Xnw==
 
 tinypool@^1.1.1:
   version "1.1.1"
