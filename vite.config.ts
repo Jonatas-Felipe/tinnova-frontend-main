@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => ({
         '../frontend-top-finance/**/*',
       ],
     }),
-    !isTest && mode === 'development' ? federation({
+    !isTest && (mode === 'development' ? federation({
       name: 'mainFront',
       remotes: {
         topUsers: {
@@ -50,7 +50,7 @@ export default defineConfig(({ mode }) => ({
         topFinance: 'http://localhost:3002/assets/remoteEntry.js',
       },
       shared: ['react', 'react-dom', 'zustand'],
-    }),,
+    })),
     react(),
   ],
   build: {
