@@ -52,28 +52,28 @@ export const Menu = styled.div`
     }
 
     :hover:not(.btn-arrow) {
-      color: #ee7d46 !important;
+      color: #6161ff !important;
       span {
-        color: #ee7d46 !important;
+        color: #6161ff !important;
       }
       svg {
-        color: #ee7d46 !important;
+        color: #6161ff !important;
         path:not(.question-mark) {
-          fill: #ee7d46 !important;
+          fill: #6161ff !important;
         }
       }
     }
   }
 
   .active {
-    color: #ee7d46 !important;
+    color: #6161ff !important;
     span {
-      color: #ee7d46 !important;
+      color: #6161ff !important;
     }
     svg {
-      color: #ee7d46 !important;
+      color: #6161ff !important;
       path:not(.question-mark) {
-        fill: #ee7d46 !important;
+        fill: #6161ff !important;
       }
     }
   }

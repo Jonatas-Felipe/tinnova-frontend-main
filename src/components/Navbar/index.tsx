@@ -8,7 +8,7 @@ import { RiMoneyDollarCircleFill } from 'react-icons/ri';
 
 import { Container, Menu } from './styles';
 
-import logo from '~/assets/logos/logo.png';
+import logo from '~/assets/logos/logo-white.png';
 import { Link } from 'react-router-dom';
 import { useAuth } from '~/hooks/Auth';
 
@@ -57,7 +57,7 @@ const NavBar: React.FC<INavBar> = ({ active, onClick }) => {
         </button>
         <div className={`align-items-start zoom d-flex flex-column`}>
           <div className="logo-box d-flex align-items-center justify-content-center px-4">
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo" className="w-75" />
           </div>
 
           <Link

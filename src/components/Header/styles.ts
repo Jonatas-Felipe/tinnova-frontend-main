@@ -12,13 +12,13 @@ export const Container = styled.header`
       transition-duration: 0.3s;
 
       :hover {
-        color: #ec6724;
+        color: #6161ff;
         text-decoration: underline !important;
       }
     }
 
     a.selected {
-      color: #ec6724;
+      color: #6161ff;
       text-decoration: underline !important;
     }
   }

@@ -7,14 +7,14 @@ interface ILabel {
 
 export const Container = styled.div`
   .btn-submit {
-    background-color: #ec6724;
-    color: #fff;
+    background-color: #6161ff;
+    color: #fff !important;
     transition-duration: 0.3s;
     border-radius: 4px;
     height: 60px;
 
     :hover {
-      background-color: ${darken(0.05, '#EC6724')} !important;
+      background-color: ${darken(0.05, '#6161ff')} !important;
     }
   }
 `;

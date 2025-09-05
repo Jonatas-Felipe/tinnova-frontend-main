@@ -34,7 +34,7 @@ const Header: React.FC = () => {
             </MenuButton>
           </div>
           <div className="col-2 col-lg-1 d-flex justify-content-center">
-            <img src={logo} alt="Teddy Open Finance" />
+            <img src={logo} alt="Tinnova" className="w-100" />
           </div>
           <div className="col-md-7 col-lg-8 d-none d-md-block">
             <div className="d-flex justify-content-center options">
