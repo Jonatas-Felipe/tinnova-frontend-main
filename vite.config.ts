@@ -1,12 +1,13 @@
 import { defineConfig } from 'vitest/config';
 import react from '@vitejs/plugin-react';
 import { federation } from '@module-federation/vite';
+import federationPlugin from '@originjs/vite-plugin-federation';
 import ViteRestart from 'vite-plugin-restart';
 import path from 'path';
 
 const isTest = process.env.VITEST;
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   base: '/',
   plugins: [
     ViteRestart({
@@ -15,7 +16,7 @@ export default defineConfig({
         '../frontend-top-finance/**/*',
       ],
     }),
-    !isTest && federation({
+    !isTest && mode === 'development' ? federation({
       name: 'mainFront',
       remotes: {
         topUsers: {
@@ -38,7 +39,18 @@ export default defineConfig({
       },
       filename: 'assets/remoteEntry.js',
       shared: ['react', 'react-dom', 'zustand'],
-    }),
+    }) : federationPlugin({
+      name: 'mainFront',
+      filename: 'assets/remoteEntry.js',
+      exposes: {
+        './UserStore': './src/store/userStore.ts',
+      },
+      remotes: {
+        topUsers: 'http://localhost:3001/assets/remoteEntry.js',
+        topFinance: 'http://localhost:3002/assets/remoteEntry.js',
+      },
+      shared: ['react', 'react-dom', 'zustand'],
+    }),,
     react(),
   ],
   build: {
@@ -65,4 +77,4 @@ export default defineConfig({
       '**/*.config.{js,ts}',
     ],
   },
-});
+}));
