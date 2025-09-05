@@ -22,7 +22,13 @@ export default defineConfig({
           entryGlobalName: 'topUsers',
           shareScope: 'default',
         },
-        // topFinance: 'http://localhost:3002/assets/remoteEntry.js',
+        topFinance: {
+          type: 'module',
+          name: 'topFinance',
+          entry: 'http://localhost:3002/assets/remoteEntry.js',
+          entryGlobalName: 'topFinance',
+          shareScope: 'default',
+        },
       },
       exposes: {
         './UserStore': './src/store/userStore.ts',

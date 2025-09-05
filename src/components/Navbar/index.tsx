@@ -2,9 +2,11 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { IoArrowBackCircle } from 'react-icons/io5';
 import { GoSignOut } from 'react-icons/go';
+import { IoMdHome } from 'react-icons/io';
+import { FaUsers } from 'react-icons/fa6';
+import { RiMoneyDollarCircleFill } from 'react-icons/ri';
 
 import { Container, Menu } from './styles';
-import { HomeIcon, ClientsIcon, SelectedClientsIcon } from '../Icons';
 
 import logo from '~/assets/logos/logo.png';
 import { Link } from 'react-router-dom';
@@ -59,28 +61,28 @@ const NavBar: React.FC<INavBar> = ({ active, onClick }) => {
           </div>
 
           <Link
-            to={`/clientes`}
+            to={`/usuarios`}
             className="d-flex align-items-center mt-4 px-4"
           >
-            <HomeIcon size={20} /> <span>Home</span>
+            <IoMdHome size={20} /> <span>Home</span>
           </Link>
 
           <NavLink
-            to={`/clientes`}
+            to={`/usuarios`}
             className={({ isActive }) =>
               `d-flex align-items-center mt-4 px-4 ${isActive ? 'active' : ''}`
             }
           >
-            <ClientsIcon size={20} /> <span>Clientes</span>
+            <FaUsers size={20} /> <span>Usuários</span>
           </NavLink>
 
           <NavLink
-            to={`/clientes-selecionados`}
+            to={`/financas`}
             className={({ isActive }) =>
               `d-flex align-items-center mt-4 px-4 ${isActive ? 'active' : ''}`
             }
           >
-            <SelectedClientsIcon size={20} /> <span>Clientes Selecionados</span>
+            <RiMoneyDollarCircleFill size={20} /> <span>Finanças</span>
           </NavLink>
           <button
             type="button"

@@ -39,18 +39,18 @@ const Header: React.FC = () => {
           <div className="col-md-7 col-lg-8 d-none d-md-block">
             <div className="d-flex justify-content-center options">
               <NavLink
-                to="/clientes"
+                to="/usuarios"
                 className={({ isActive }) => (isActive ? 'selected' : '')}
               >
-                Clientes
+                Usuários
               </NavLink>
               <NavLink
-                to="/clientes-selecionados"
+                to="/financas"
                 className={({ isActive }) =>
                   `mx-5 ${isActive ? 'selected' : ''}`
                 }
               >
-                Clientes Selecionados
+                Finanças
               </NavLink>
               <button
                 type="button"

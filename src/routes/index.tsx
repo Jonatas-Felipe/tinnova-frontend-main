@@ -6,7 +6,7 @@ import RouteWrapper from './RouteWrapper';
 import Login from '~/pages/Login';
 
 const UsersApp = lazy(() => import('topUsers/App'));
-// const FinanceApp = lazy(() => import('topFinance/App'));
+const FinanceApp = lazy(() => import('topFinance/App'));
 
 const routes: React.FC = () => {
   return (
@@ -17,11 +17,11 @@ const routes: React.FC = () => {
           <RouteWrapper element={<UsersApp />} isPrivate />
         </Suspense>
       } />
-      {/* <Route path="/financas" element={
-        <Suspense fallback={<div>Carregando microfrontend de usuários...</div>}>
+      <Route path="/financas" element={
+        <Suspense fallback={<div>Carregando microfrontend de finaças...</div>}>
           <RouteWrapper element={<FinanceApp />} isPrivate />
         </Suspense>
-      } /> */}
+      } />
     </Routes>
   );
 };
