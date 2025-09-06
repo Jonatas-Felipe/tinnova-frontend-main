@@ -81,12 +81,6 @@ export default createGlobalStyle`
     }
   }
 
-  .modal-dialog {
-    max-width: 500px;
-    width: 95%;
-    margin: 1.75rem auto;
-    }
-
   .text-secondary{
     color: #707070 !important;
   }
